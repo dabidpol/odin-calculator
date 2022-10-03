@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    background-color: beige;
+
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    background-color: black;
+    border: 8px solid gray;
+    border-radius: 2px;
+    gap: 1px;
+}
+
+#display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    grid-column: 1 / -1;
+    background-color: lightgray;
+    padding: 4px;
+    font-size: 4em;
+    font-weight: 400;
+    margin: 4px;
+}
+
+button{
+    margin: 1px;
+    border-radius: 5%;
+    border: none;
+    font-weight: 300;
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+}
+
+.reset{
+    background-color: greenyellow;
+}
+
+.sign{
+    background-color: greenyellow;
+}
+
+.percent {
+    background-color: greenyellow;
+}
+
+.operator {
+    background-color: orange;
+}
+
+.num {
+    background-color: aqua;
+}
+
+#zero {
+    grid-column: span 2;
+}
+
+.point{
+    background-color: aqua;
+}
+
+.equals{
+    background-color: orange;
+}
