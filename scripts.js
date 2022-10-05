@@ -13,24 +13,53 @@ let fnum = '';
 let snum = '';
 let numbers = document.querySelectorAll('button');
 
-function firstnum(input){
-    fnum = input;
-    disp.textContent = input;
+let one = document.getElementById('one');
+let two = document.getElementById('two');
+let three = document.getElementById('three');
+let four = document.getElementById('four');
+let five = document.getElementById('five');
+let six = document.getElementById('six');
+let seven = document.getElementById('seven');
+let eight = document.getElementById('eight');
+let nine = document.getElementById('nine');
+let zero = document.getElementById('zero');
+
+let dugang = document.getElementById('add');
+let kulang = document.getElementById('minus');
+let tayms = document.getElementById('times');
+let dibay = document.getElementById('divide');
+
+let ans = document.getElementById('equals');
+
+one.addEventListener("click", clickone);
+two.addEventListener('click', clicktwo);
+
+dugang.addEventListener('click', clickdugang);
+
+ans.addEventListener('click', clickequals);
+
+function clickone(){
+    fnum += 1;
+    //disp = fnum;
+    document.getElementById('display').textContent = fnum;
 }
 
-function secondnum(input){
-    snum = input;
-    disp.textContent = input;
+function clicktwo(){
+    snum+=2;
+    document.getElementById('display').textContent = snum;
 }
 
-// document.addEventListener('click', function(){
-//     let clicked = document.getElementById('num').value
-//     firstnum(clicked)
-// });
+function clickdugang(){
+    op = 'add'
+}
 
+function clickequals(){
+    let s = operate(op,fnum,snum);
+    document.getElementById('display').textContent = s;
+}
 
 function add(x,y){
-    let sum = x + y;
+    let sum = parseFloat(x) + parseFloat(y);
     return sum;
 }
 
@@ -50,7 +79,7 @@ function divide(x,y){
 }
 
 function operate (operator,a,b){
-    if(operator == '+'){
+    if(operator == 'add'){
         return add(a,b);
     }else if(operator == '-'){
         return subtract(a,b);
